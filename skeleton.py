@@ -11,9 +11,9 @@ def all_combinations_of(l):
     l: list -- any list which is NOT empty
     return:
     A list containing all possible combinations, sorted by cardinality in ascending order.
-    Each combination is a tuple of elements in l.
+    Each combination is a list of elements in l.
     """
-    return list(chain(*[combinations(l, r) for r in range(0, len(l)+1)]))
+    return list(map(list, chain.from_iterable(combinations(l, r) for r in range(0, len(l)+1))))
 
 def zero_and_one(atoms):
     pass # remove this line and fill in the appropriate code here
