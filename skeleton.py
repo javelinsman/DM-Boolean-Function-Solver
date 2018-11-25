@@ -37,7 +37,7 @@ def find_boolean_function(atoms, func):
             if func(x, y) != add_elements(x, y, zero.copy(), terms):
                 break
         else:
-            return list(combination)
+            return combination
     return None
 
 if __name__ == "__main__":
