@@ -24,7 +24,7 @@ def list_all_elements(atoms):
 def evaluate_minterm(x, y, one, minterm):
     pass # remove this line and fill in the appropriate code here
 
-def add_elements(x, y, zero, elements):
+def add_elements(zero, elements):
     pass # remove this line and fill in the appropriate code here
 
 def find_boolean_function(atoms, func):
@@ -34,7 +34,7 @@ def find_boolean_function(atoms, func):
     for combination in all_combinations_of(minterms):
         for x, y in product(elements, elements):
             terms = [evaluate_minterm(x, y, one, minterm) for minterm in combination]
-            if func(x, y) != add_elements(x, y, zero.copy(), terms):
+            if func(x, y) != add_elements(zero.copy(), terms):
                 break
         else:
             return combination
