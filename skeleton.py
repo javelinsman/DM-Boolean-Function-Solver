@@ -41,7 +41,7 @@ def find_boolean_function(atoms, func):
     return None
 
 if __name__ == "__main__":
-    atoms = {'a', 'b'}
+    atoms = ['a', 'b']
     def func(X, Y):
         elements = [set(), {'a'}, {'b'}, {'a', 'b'}]
         z0, za, zb, z1 = elements
