@@ -33,7 +33,7 @@ def find_boolean_function(atoms, func):
     minterms = ["xy", "x'y", "xy'", "x'y'"]
     for combination in all_combinations_of(minterms):
         for x, y in product(elements, elements):
-            terms = [evaluate_minterm(x, y, one, minterm) for minterm in combination]
+            terms = [evaluate_minterm(x, y, one.copy(), minterm) for minterm in combination]
             if func(x, y) != add_elements(zero.copy(), terms):
                 break
         else:
